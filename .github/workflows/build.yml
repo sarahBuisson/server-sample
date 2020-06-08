@@ -14,7 +14,7 @@ jobs:
       - name: Build
         run: |
           npm install
-          docker build -t ${{github.actor}}/${{github.repository}} .
+          docker build -t sarahbuisson/${{github.repository}} .
       - name: Deploy
         uses: akhileshns/heroku-deploy@v3.0.4 # This is the action
         with:
