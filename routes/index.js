@@ -22,5 +22,13 @@ router.get('/scores', function (req, res, next) {
     res.send(scores);
 });
 
+router.get('/scoresText', function (req, res, next) {
+    res.send('scores');
+});
+
+router.get('/scoresJson', function (req, res, next) {
+    res.json({scores:scores});
+});
+
 
 module.exports = router;
