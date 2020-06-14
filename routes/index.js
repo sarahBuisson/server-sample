@@ -6,12 +6,15 @@ var cors = require('cors')
 var whitelist = ['http://localhost:4200', 'http://sarahbuisson.github.io']
 var corsOptionsDelegate = function (req, callback) {
     var corsOptions;
+    console.log("Origin")
     console.log(req.header('Origin'))
+    console.log(req.header)
     if (whitelist.indexOf(req.header('Origin')) !== -1) {
         corsOptions = {origin: true} // reflect (enable) the requested origin in the CORS response
     } else {
         corsOptions = {origin: false} // disable CORS for this request
     }
+
     corsOptions.methods= "GET,HEAD,PUT,PATCH,POST,DELETE";
     callback(null, corsOptions) // callback expects two parameters: error and options
 }
