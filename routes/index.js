@@ -12,6 +12,7 @@ var corsOptionsDelegate = function (req, callback) {
     } else {
         corsOptions = {origin: false} // disable CORS for this request
     }
+    corsOptions.methods= "GET,HEAD,PUT,PATCH,POST,DELETE";
     callback(null, corsOptions) // callback expects two parameters: error and options
 }
 
