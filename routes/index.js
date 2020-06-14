@@ -38,7 +38,7 @@ router.post('/score', cors(corsOptionsDelegate), function (req, res, next) {
     scores.push(req.body)
     if (scores.length > 10)
         scores = scores.slice(1)
-    res.status(200).send('Ok');
+    res.status(200).send({message: 'score saved'});
 });
 
 router.get('/scores', cors(corsOptionsDelegate), function (req, res, next) {
