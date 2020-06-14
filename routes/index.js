@@ -33,6 +33,7 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Express'});
 });
 
+router.options('/score', cors(corsOptionsDelegate))
 router.post('/score', cors(corsOptionsDelegate), function (req, res, next) {
     scores.push(req.body)
     if (scores.length > 10)
